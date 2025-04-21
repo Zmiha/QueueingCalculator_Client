@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF8C00</item>
+        <item name="colorPrimaryDark">#FF6200EE</item>
+        <item name="colorAccent">#FF03DAC5</item>
+        <item name="android:editTextBackground">@drawable/edit_text_background_dark</item>
+        <item name="spinnerStyle">@style/SpinnerStyle</item>
+        <item name="android:buttonStyle">@style/CustomButtonStyle</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#B0FFFFFF</item>
+        <item name="android:windowBackground">@drawable/background_gradient_dark</item>
+    </style>
+
+    <style name="MatrixInput">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/edit_text_background_dark</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHint">#B0FFFFFF</item>
+    </style>
+
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">#FF8C00</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/edit_text_background_dark</item>
+    </style>
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="?android:attr/windowBackground">
+
+    <Button
+        android:id="@+id/toggleThemeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Тема"
+        android:drawableLeft="@drawable/ic_light_mode"
+        android:layout_gravity="end"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Queueing Network Calculator"
+        android:textSize="18sp"
+        android:textColor="@color/primary"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:id="@+id/matrixLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Матрица передач (4x4):"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp" />
+
+    <Button
+        android:id="@+id/clearMatrixButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Очистить матрицу"
+        android:textSize="10sp"
+        android:layout_marginBottom="2dp" />
+
+    <GridLayout
+        android:id="@+id/matrixGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="4"
+        android:columnCount="4"
+        android:layout_marginBottom="4dp">
+
+        <EditText android:id="@+id/matrix11" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix12" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix13" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix14" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix21" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix22" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix23" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix24" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix31" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix32" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix33" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix34" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix41" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix42" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix43" style="@style/MatrixInput" android:text="0" />
+        <EditText android:id="@+id/matrix44" style="@style/MatrixInput" android:text="0" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/serviceRateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Интенсивность обслуживания:"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp" />
+
+    <EditText
+        android:id="@+id/serviceRateInput"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:inputType="numberDecimal|text"
+        android:digits="0123456789. "
+        android:hint="4 числа через пробела"
+        android:gravity="center_vertical|start"
+        android:paddingStart="8dp"
+        android:textSize="12sp"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/requestsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Количество заявок:"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp" />
+
+    <EditText
+        android:id="@+id/requestsInput"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:inputType="number"
+        android:hint="1 целое число"
+        android:gravity="center_vertical|start"
+        android:paddingStart="8dp"
+        android:textSize="12sp"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/variationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Квадрат коэффициента вариации:"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp" />
+
+    <Spinner
+        android:id="@+id/variationSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginBottom="2dp" />
+
+    <EditText
+        android:id="@+id/variationInput"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:inputType="text"
+        android:hint="Собственное значение (4 числа через пробел)"
+        android:gravity="center_vertical|start"
+        android:paddingStart="8dp"
+        android:textSize="12sp"
+        android:textColor="?android:textColorPrimary"
+        android:visibility="gone"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/historyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="История расчетов:"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="?android:attr/colorBackground"
+        android:elevation="4dp"
+        app:backgroundTint="@color/primary"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Рассчитать"
+            android:textSize="10sp"
+            android:layout_marginEnd="2dp" />
+
+        <Button
+            android:id="@+id/exportHistoryButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Экспорт истории"
+            android:textSize="10sp"
+            android:layout_marginStart="2dp" />
+    </LinearLayout>
+</LinearLayout>
